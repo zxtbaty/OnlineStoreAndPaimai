@@ -48,8 +48,8 @@ ePaiShop = Spring Boot后端 + Vue管理员前端 + 电商微商城 + 拍卖微�
  
 ## 项目代码
 
-* [码云](https://gitee.com/jinyuanjava/litemall)
-* [GitHub](https://github.com/jinyuanjava/litemall)
+* [码云](https://gitee.com/zxtbaty/online-store-and-paimai.git)
+* [GitHub](https://github.com/zxtbaty/OnlineStoreAndPaimai.git)
 
 ## 项目架构
 ![](./doc/pic/项目架构.png)    
