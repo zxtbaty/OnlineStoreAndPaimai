@@ -1,0 +1,47 @@
+@charset "UTF-8";
+/* 页面左右间距 */
+/* 文字尺寸 */
+/*文字颜色*/
+/* 边框颜色 */
+/* 图片加载中颜色 */
+/* 行为相关颜色 */
+.uni-countdown {
+  margin: 10rpx 0 20rpx 0;
+  font-size: 23rpx;
+  padding: 2rpx 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.uni-countdown__splitor {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    line-height: 35rpx;
+    padding: 0 0rpx;
+    font-size: 28rpx;
+}
+.uni-countdown__number {
+    line-height: 35rpx;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: 35rpx;
+    border-radius: 6rpx;
+    margin: 0 0rpx;
+    font-size: 28rpx;
+    border: 1px solid #000000;
+    font-size: 24rpx;
+    padding: 0 10rpx;
+}
+

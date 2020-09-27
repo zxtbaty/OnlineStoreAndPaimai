@@ -1,0 +1,91 @@
+{
+  "pages": [
+    "pages/loading/loading",
+    "pages/index/index",
+    "pages/product/product",
+    "pages/set/set",
+    "pages/userinfo/userinfo",
+    "pages/cart/cart",
+    "pages/public/login",
+    "pages/public/tologin",
+    "pages/public/wechatlogin",
+    "pages/public/regist",
+    "pages/user/user",
+    "pages/user/Coupon",
+    "pages/user/Contactus",
+    "pages/detail/detail",
+    "pages/order/order",
+    "pages/submitam/order",
+    "pages/submitam/orderdetail",
+    "pages/money/money",
+    "pages/order/createOrder",
+    "pages/address/address",
+    "pages/address/addressManage",
+    "pages/money/pay",
+    "pages/money/alipay",
+    "pages/money/paySuccess",
+    "pages/notice/notice",
+    "pages/category/category",
+    "pages/product/list",
+    "pages/category/search",
+    "pages/appointment/appointment",
+    "pages/appointment/myappointment",
+    "pages/submitam/submitam",
+    "pages/loading/loading",
+    "pages/order/orderdetail",
+    "pages/money/waitpay"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "机场商贸",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "backgroundColor": "#f8f8f8"
+  },
+  "tabBar": {
+    "color": "#2F2F2F",
+    "selectedColor": "#2F2F2F",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/newimg/foot_index2.png",
+        "selectedIconPath": "static/newimg/foot_index1.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/category/category",
+        "iconPath": "static/newimg/foot_bug2.png",
+        "selectedIconPath": "static/newimg/foot_bug3.png",
+        "text": "特产"
+      },
+      {
+        "pagePath": "pages/appointment/appointment",
+        "iconPath": "static/newimg/foot_time2.png",
+        "selectedIconPath": "static/yuyue2.png",
+        "text": "精品"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "iconPath": "static/newimg/foot_cart2.png",
+        "selectedIconPath": "static/newimg/foot_cart1.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "iconPath": "static/newimg/foot_my2.png",
+        "selectedIconPath": "static/newimg/foot_my1.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "nvueCompiler": "weex",
+  "splashscreen": {
+    "alwaysShowBeforeRender": true,
+    "autoclose": false
+  },
+  "appname": "商城",
+  "compilerVersion": "2.1.1",
+  "usingComponents": {}
+}

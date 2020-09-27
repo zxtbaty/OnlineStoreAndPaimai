@@ -1,0 +1,41 @@
+{
+	"pages": [
+	 
+		{
+			"path": "pages/index",
+			"style": {
+				"navigationBarTitleText": "文博馆",
+				"navigationStyle": "custom",
+				"app-plus": {
+					"bounce": "none"
+ 
+				}
+			}
+		
+		},
+		
+      
+		{
+			"path": "pages/article",
+			"style": {
+				"navigationBarTitleText": "文博馆",
+				"navigationStyle": "custom",
+				// "app-plus": {
+				// 	"bounce": "none"
+					 
+				// },
+				"app-plus": {
+					"titleNView": {
+						"type": "transparent"
+					}
+				}
+			}
+		}
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#FFFFFF",
+		"backgroundColor": "#f8f8f8"
+	}
+}

@@ -1,0 +1,95 @@
+@charset "UTF-8";
+/* 页面左右间距 */
+/* 文字尺寸 */
+/*文字颜色*/
+/* 边框颜色 */
+/* 图片加载中颜色 */
+/* 行为相关颜色 */
+page {
+  background: #f7f7f7;
+}
+.cu-top {
+  background: #fff;
+}
+.cu-top image {
+    width: 37rpx;
+    height: 37rpx;
+    margin: 0 26rpx 0 0;
+}
+.cu-top .email-icon {
+    width: 38rpx;
+    height: 25rpx;
+}
+.cu-top .cu-top-li {
+    padding: 0 27rpx;
+    height: 94rpx;
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+}
+.cu-top .cu-top-li .cu-topli-left {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+}
+.cu-top .cu-top-li text {
+      font-size: 24rpx;
+}
+.cu-top .cu-top-li .cu-topli-right {
+      color: #909090;
+      font-size: 20rpx;
+}
+.cu-center {
+  background: #fff;
+  width: 100vw;
+  height: 267rpx;
+  margin: 27rpx 0 0;
+  text-align: center;
+}
+.cu-center image {
+    width: 335rpx;
+    height: 115rpx;
+    margin: 58rpx auto 0;
+}
+.cu-bottom {
+  padding: 10rpx 27rpx 0;
+}
+.cu-bottom .title {
+    position: relative;
+    text-align: center;
+    font-size: 27rpx;
+    line-height: 70rpx;
+}
+.cu-bottom .title:after, .cu-bottom .title:before {
+      position: absolute;
+      content: '';
+      width: 67rpx;
+      height: 1px;
+      background: #000;
+      top: 50%;
+      right: 80rpx;
+}
+.cu-bottom .title:before {
+      left: 80rpx;
+}
+.cu-bottom .text {
+    font-size: 23rpx;
+    line-height: 31rpx;
+    margin: 0 0 40rpx 0;
+}
+

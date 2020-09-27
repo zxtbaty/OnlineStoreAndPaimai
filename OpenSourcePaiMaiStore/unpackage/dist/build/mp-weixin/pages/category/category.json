@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "在线商城",
+  "navigationBarBackgroundColor": "#55036B",
+  "usingComponents": {
+    "min-badge": "/components/min-badge/min-badge"
+  }
+}

@@ -1,0 +1,36 @@
+pagehelper:
+  helperDialect:  mysql
+  reasonable: false
+  supportMethodsArguments:  true
+  params: count=countSql
+
+spring:
+  ssh2:
+    if-load: false
+    proxy-host: 154.8.142.207
+    proxy-port: 22
+    proxy-user: root
+    proxy-password: Zxtbaty007
+    dest-host: 127.0.0.1
+    dest-port: 3306
+    local-port: 3306
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+#    url: jdbc:mysql://localhost:3306/litemall?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&allowPublicKeyRetrieval=true&verifyServerCertificate=false&useSSL=false&allowMultiQueries=true
+
+    url: jdbc:mysql://154.8.142.207:3306/litemall?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&allowPublicKeyRetrieval=true&verifyServerCertificate=false&useSSL=false&allowMultiQueries=true
+#    url: jdbc:mysql://localhost:3306/litemall?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&allowPublicKeyRetrieval=true&verifyServerCertificate=false&useSSL=false&allowMultiQueries=true
+
+    username: root
+    password: Zxtbaty007
+
+    hikari:
+      auto-commit: true
+      connection-test-query: 'SELECT '
+      connection-timeout: 30000 #等待连接池分配连接的最大时长（毫秒），超过这个时长还没可用的连接则发生SQLException， 缺省:30秒
+      idle-timeout: 600000 #一个连接idle状态的最大时长（毫秒），超时则被释放（retired），缺省:10分钟
+      max-lifetime: 1765000 #一个连接的生命时长（毫秒），超时而且没被使用则被释放（retired），缺省:30分钟，建议设置比数据库超时时长少30秒以上
+      maximum-pool-size: 15 #连接池中允许的最大连接数。缺省值：10；推荐的公式：((core_count * 2) + effective_spindle_count)
+      #      minimum-idle: ''
+      pool-name: DatebookHikariCP

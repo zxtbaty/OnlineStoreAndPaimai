@@ -1,0 +1,26 @@
+login:
+#  wx:
+#    #app-id: wx87b39def9ad0f64b
+#    #app-secret: 6289945a9a145f79d7d7080efe6847b9
+#    app-id: wxa144890599ff3bdb
+#    app-secret: b6030db2bc837f0faeba3ca9cb050925
+#    backUrl: http://www.echitch.com/pages/public/wechatlogin
+#
+##    以下是通过测试账号修改本地的记录
+#    app-id: wx55c19ad1356ff1fc
+#    app-secret: 9ef2974b99a5b6f79394dc4733eef835
+#    backUrl: http://172.16.5.18:8080/pages/public/wechatlogin
+##    backUrl: http://172.20.10.12:8080/pages/public/wechatlogin
+
+spring:
+  mandatory:
+    file:
+      encoding: UTF-8
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+server:
+  tomcat:
+    uri-encoding: UTF-8

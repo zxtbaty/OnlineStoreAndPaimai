@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "我的",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "list-cell": "/components/mix-list-cell",
+    "min-badge": "/components/min-badge/min-badge"
+  }
+}

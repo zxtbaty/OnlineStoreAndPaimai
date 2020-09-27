@@ -1,0 +1,136 @@
+@charset "UTF-8";
+/* 页面左右间距 */
+/* 文字尺寸 */
+/*文字颜色*/
+/* 边框颜色 */
+/* 图片加载中颜色 */
+/* 行为相关颜色 */
+.loading_bg,
+.loading_content {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 99;
+}
+.active0 {
+  width: 120%;
+  height: 100%;
+  -webkit-animation: 1500ms img1;
+          animation: 1500ms img1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+@-webkit-keyframes img1 {
+from {
+    margin: 0;
+}
+to {
+    margin: 0 0 0 -20%;
+    display: none;
+}
+}
+@keyframes img1 {
+from {
+    margin: 0;
+}
+to {
+    margin: 0 0 0 -20%;
+    display: none;
+}
+}
+.active1 {
+  width: 100%;
+  height: 100%;
+  -webkit-animation: 1500ms img2;
+          animation: 1500ms img2;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+@-webkit-keyframes img2 {
+from {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+}
+to {
+    -webkit-transform: scale(1.2, 1.2);
+            transform: scale(1.2, 1.2);
+}
+}
+@keyframes img2 {
+from {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+}
+to {
+    -webkit-transform: scale(1.2, 1.2);
+            transform: scale(1.2, 1.2);
+}
+}
+.active2 {
+  width: 200%;
+  height: 100%;
+  -webkit-animation: 1500ms img3;
+          animation: 1500ms img3;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+@-webkit-keyframes img3 {
+from {
+    margin: 0 0 0 -20%;
+}
+to {
+    margin: 0 0 0 0;
+}
+}
+@keyframes img3 {
+from {
+    margin: 0 0 0 -20%;
+}
+to {
+    margin: 0 0 0 0;
+}
+}
+.loading_content {
+  z-index: 999;
+  text-align: center;
+  color: #fff;
+}
+.loading_content .explain {
+    color: #f1f1f1ad;
+    font-size: 26rpx;
+    padding: 0 27rpx;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    position: absolute;
+    bottom: 65rpx;
+    text-align: left;
+    line-height: 30rpx;
+}
+.loading_content .explain .blue {
+      color: #3ACEBF;
+}
+.loading_content .loading_shu {
+    font-size: 35rpx;
+    margin: 31vh 0 0;
+}
+.loading_content .tiaozhuan {
+  margin: 35vh 0 0;
+  font-size: 32rpx;
+  font-weight: lighter;
+}
+.loading_content .tiaozhuan .shu {
+  margin: 0 20rpx;
+  color: #fff;
+}
+.loading_content .toindex {
+  margin: 4vh auto 0;
+  padding: 25rpx 0 0;
+  width: 431rpx;
+  height: 105rpx;
+  border-radius: 80rpx;
+  font-size: 33rpx;
+  background: url(../../static/img/loadingbtn.21f3d366.png);
+  background-size: 100% 100%;
+}
+
+page::after{position:fixed;content:'';left:-1000px;top:-1000px;-webkit-animation:shadow-preload .1s;-webkit-animation-delay:3s;animation:shadow-preload .1s;animation-delay:3s}@-webkit-keyframes shadow-preload{0%{background-image:url(https://cdn.dcloud.net.cn/img/shadow-grey.png)}100%{background-image:url(https://cdn.dcloud.net.cn/img/shadow-grey.png)}}@keyframes shadow-preload{0%{background-image:url(https://cdn.dcloud.net.cn/img/shadow-grey.png)}100%{background-image:url(https://cdn.dcloud.net.cn/img/shadow-grey.png)}}

@@ -1,0 +1,23 @@
+spring:
+  profiles:
+    active: db, core, admin
+  messages:
+    encoding: UTF-8
+  multipart:
+    location: /storage
+  servlet:
+    multipart:
+      max-file-size: 10000MB
+      max-request-size: 10000MB
+server:
+  port: 8083
+
+
+
+logging:
+  level:
+    root:  ERROR
+    org.springframework:  ERROR
+    org.mybatis:  ERROR
+    org.jinyuanjava.litemall.admin:  DEBUG
+    org.jinyuanjava.litemall:  ERROR

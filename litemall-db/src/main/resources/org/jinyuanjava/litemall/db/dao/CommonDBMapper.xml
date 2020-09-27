@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.jinyuanjava.litemall.db.dao.CommonDBMapper">
+
+
+    <select id="procedureDaoList" resultType="map" parameterMap="pm" statementType="CALLABLE" >
+        CALL proc_paging(#{sqlS,mode=IN},#{total,mode=OUT,jdbcType=INTEGER});
+    </select>
+    <parameterMap id="pm" type="java.util.Map" >
+        <parameter property="sqlS" jdbcType="VARCHAR" mode="IN"></parameter>
+        <parameter property="total" jdbcType="INTEGER" mode="OUT"></parameter>
+    </parameterMap>
+
+    <select id="procedureExec" parameterType="java.lang.String"  statementType="CALLABLE">
+        CALL proc_exec(#{sqlS,mode=IN});
+    </select>
+
+    <select id="procedureInsert" resultType="java.lang.String" parameterMap="insertPara" statementType="CALLABLE">
+        CALL proc_insert(#{sqlS,mode=IN},#{id,mode=OUT,jdbcType=INTEGER});
+    </select>
+    <parameterMap id="insertPara" type="java.util.Map">
+        <parameter property="sqlS" jdbcType="VARCHAR" mode="IN"></parameter>
+        <parameter property="id" jdbcType="INTEGER" mode="OUT"></parameter>
+    </parameterMap>
+
+</mapper>

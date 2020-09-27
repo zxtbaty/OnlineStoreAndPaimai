@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.jinyuanjava.litemall.db.dao.StatMapper">
+    <select id="statBrowse" resultType="map" parameterType="map">
+        select
+        substr(add_time,1,10) as day,
+        count(distinct user_id) as cusVisitCount,
+        count(distinct goods_id) as goodsVisitCount,
+        count(distinct crm_id) as huiYuanVisitCount,
+        count(distinct id) as pageVisitCount
+        from litemall_footprint
+        where deleted=0
+        <if test="beginDate != null and beginDate != ''"> and DATE_FORMAT(add_time, '%Y-%m-%d')&gt;=#{beginDate, jdbcType=VARCHAR}</if>
+        <if test="endDate != null and endDate != ''"> and DATE_FORMAT(add_time, '%Y-%m-%d') &lt;= #{endDate, jdbcType=VARCHAR}</if>
+        group by substr(add_time,1,10)
+        order by day
+    </select>
+    <select id="statUser" resultType="map" parameterType="map">
+        select
+        substr(add_time,1,10) as day,
+        count(distinct id) as users
+        from litemall_user
+        where deleted=0
+        <if test="beginDate != null and beginDate != ''"> and DATE_FORMAT(add_time, '%Y-%m-%d')&gt;=#{beginDate, jdbcType=VARCHAR}</if>
+        <if test="endDate != null and endDate != ''"> and DATE_FORMAT(add_time, '%Y-%m-%d') &lt;= #{endDate, jdbcType=VARCHAR}</if>
+        group by substr(add_time,1,10)
+        order by day
+    </select>
+    <select id="statOrder" resultType="map" parameterType="map">
+        select
+        substr(add_time,1,10) as day,
+        count(id) as orders,
+        count(distinct user_id) as customers,
+        sum(actual_price) as actualPrice,
+        round(sum(actual_price)/count(distinct user_id),2) as pcr
+        from litemall_order
+        where deleted=0 and pay_method is not null
+        <if test="beginDate != null and beginDate != ''"> and DATE_FORMAT(add_time, '%Y-%m-%d')&gt;=#{beginDate, jdbcType=VARCHAR}</if>
+        <if test="endDate != null and endDate != ''"> and DATE_FORMAT(add_time, '%Y-%m-%d') &lt;= #{endDate, jdbcType=VARCHAR}</if>
+        group by substr(add_time,1,10)
+    </select>
+    <select id="statGoods" resultType="map" parameterType="map">
+        select
+        substr(add_time,1, 10) as day,
+        count(distinct order_id) as orders,
+        sum(number) as productSum,
+        count(product_id) as productCount,
+        sum(number*price) as sumMoney
+        from view_order_goods
+        where deleted=0 and pay_method is not null
+        <if test="beginDate != null and beginDate != ''"> and DATE_FORMAT(add_time, '%Y-%m-%d')&gt;=#{beginDate, jdbcType=VARCHAR}</if>
+        <if test="endDate != null and endDate != ''"> and DATE_FORMAT(add_time, '%Y-%m-%d') &lt;= #{endDate, jdbcType=VARCHAR}</if>
+        group by substr(add_time,1, 10)
+    </select>
+
+    <select id="statUserGoodsOrder" resultType="map" parameterType="map">
+         SELECT
+         r.day as 日期,
+         SUM(r.userCount) as 新增用户量,
+         SUM(r.goodsCount) as 新增商品品种,
+         sum(r.orderCount) as 订单量,
+         sum(r.orderMoney) as 收款金额,
+         sum(r.orderGoodsCount) as 订单商品数量合计,
+		 sum(r.cusVisitCount) as 用户访问量,
+         sum(r.huiYuanVisitCount) as 会员用户访问量,
+         sum(r.pageVisitCount) as 页面访问量,
+		 sum(r.goodsVisitCount) as 商品访问量
+        FROM (
+             select
+                substr(add_time,1,10) as day,
+                count(distinct id) as userCount,
+                0 as goodsCount,
+                0 as orderCount,
+                0 as orderMoney,
+                0 as orderGoodsCount,
+                0 as cusVisitCount,
+                0 as huiYuanVisitCount,
+                0 as pageVisitCount,
+				0 as goodsVisitCount
+                from litemall_user
+                where deleted=0
+                <if test="beginDate != null and beginDate != ''"> and DATE_FORMAT(add_time, '%Y-%m-%d')&gt;=#{beginDate, jdbcType=VARCHAR}</if>
+                <if test="endDate != null and endDate != ''"> and DATE_FORMAT(add_time, '%Y-%m-%d') &lt;= #{endDate, jdbcType=VARCHAR}</if>
+                group by substr(add_time,1,10)
+                union all
+                            select
+                            substr(add_time,1,10) as day,
+                            0 as userCount,
+                            count(distinct id) as goods,
+                            0 as orderCount,
+                            0 as orderMoney,
+                            0 as orderGoodsCount,
+                            0 as cusVisitCount,
+                            0 as huiYuanVisitCount,
+                            0 as pageVisitCount,
+						    0 as goodsVisitCount
+                            from litemall_goods
+                            where deleted=0
+                            <if test="beginDate != null and beginDate != ''"> and DATE_FORMAT(add_time, '%Y-%m-%d')&gt;=#{beginDate, jdbcType=VARCHAR}</if>
+                            <if test="endDate != null and endDate != ''"> and DATE_FORMAT(add_time, '%Y-%m-%d') &lt;= #{endDate, jdbcType=VARCHAR}</if>
+                            group by substr(add_time,1,10)
+
+                union all
+                            select
+                            substr(add_time,1,10) as day,
+                            0 as userCount,
+                            0 as goods,
+                            count(distinct id) as orderCount,
+                            sum(actual_price) as orderMoney,
+                            0 as orderGoodsCount,
+                            0 as cusVisitCount,
+                            0 as huiYuanVisitCount,
+                            0 as pageVisitCount,
+							0 as goodsVisitCount
+                            from litemall_order
+                            where deleted=0 and pay_method is not null
+                            <if test="beginDate != null and beginDate != ''"> and DATE_FORMAT(add_time, '%Y-%m-%d')&gt;=#{beginDate, jdbcType=VARCHAR}</if>
+                            <if test="endDate != null and endDate != ''"> and DATE_FORMAT(add_time, '%Y-%m-%d') &lt;= #{endDate, jdbcType=VARCHAR}</if>
+                            group by substr(add_time,1,10)
+                union all
+                            select
+                            substr(add_time,1,10) as day,
+                            0 as userCount,
+                            0 as goods,
+                            0 as orderCount,
+                            0 as orderMoney,
+                            sum(number) as orderGoodsCount,
+                            0 as cusVisitCount,
+                            0 as huiYuanVisitCount,
+                            0 as pageVisitCount,
+                            0 as goodsVisitCount
+                            from view_order_goods
+                            where deleted=0 and pay_method is not null
+                            <if test="beginDate != null and beginDate != ''"> and DATE_FORMAT(add_time, '%Y-%m-%d')&gt;=#{beginDate, jdbcType=VARCHAR}</if>
+                            <if test="endDate != null and endDate != ''"> and DATE_FORMAT(add_time, '%Y-%m-%d') &lt;= #{endDate, jdbcType=VARCHAR}</if>
+                            group by substr(add_time,1,10)
+                union all
+                            select
+                            substr(add_time,1,10) as day,
+                            0 as userCount,
+                            0 as goods,
+                            0 as orderCount,
+                            0 as orderMoney,
+                            0 as orderGoodsCount,
+							count(distinct user_id) as cusVisitCount,
+                            count(distinct crm_id) as huiYuanVisitCount,
+                            count(distinct id) as pageVisitCount,
+							count(distinct goods_id) as goodsVisitCount
+                            from litemall_footprint
+                            where deleted=0
+                            <if test="beginDate != null and beginDate != ''"> and DATE_FORMAT(add_time, '%Y-%m-%d')&gt;=#{beginDate, jdbcType=VARCHAR}</if>
+                            <if test="endDate != null and endDate != ''"> and DATE_FORMAT(add_time, '%Y-%m-%d') &lt;= #{endDate, jdbcType=VARCHAR}</if>
+                            group by substr(add_time,1,10)
+                ) r
+                group by r.day
+                order by r.day
+
+    </select>
+
+    <select id="statGoodsOrderSumAmount" parameterType="java.util.List" resultType="map">
+        SELECT goods_sn as code,goods_name as name,specifications,price,sum(number) as amount,
+        GROUP_CONCAT(order_sn) as orderno
+        FROM  view_order_goods
+        where deleted=0 and order_id in
+        <foreach collection="list" index="index" item="item" open="(" separator="," close=")">
+             #{item}
+        </foreach>
+        group by goods_sn,goods_name,specifications,price
+    </select>
+
+    <select id="statGoodsOrderPDF" parameterType="java.util.List" resultType="map">
+        select brand_name as brandName,goods_name as goodName,specifications,
+        case when pic_url is null then goods_pic_url else pic_url end as goodImg,price,number,
+        price*number as total,goods_price as sumTotal,order_sn as orderNo,username ,
+        nickname,user_phone as userPhone,
+        mobile,DATE_FORMAT(add_time,'%Y-%m-%d %H:%i:%s')  as createTime,consignee as receiveName,mobile as receivePhone, address as receiveAddress,goods_price as initPrice,
+        coupon_price as manjian,freight_price as freightPrice,actual_price as payPrice,
+        integral_price as integralPrice,case  pay_method when 1 then '支付宝' when 2 then '微信'  else '' END AS payMethod,'' as ticketInfo
+        from view_order_goods where order_id=#{id}
+    </select>
+
+
+</mapper>

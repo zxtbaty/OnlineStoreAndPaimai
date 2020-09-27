@@ -1,0 +1,247 @@
+@charset "UTF-8";
+/* 页面左右间距 */
+/* 文字尺寸 */
+/*文字颜色*/
+/* 边框颜色 */
+/* 图片加载中颜色 */
+/* 行为相关颜色 */
+page {
+  background: #f9f9f9;
+}
+.set-box {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.set-box .icon {
+    float: right;
+    margin-left: 0rpx;
+    margin-right: 20rpx;
+}
+.set-box image {
+    width: 44rpx;
+    height: 40rpx;
+}
+.am_list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-flex;
+  width: 100vw;
+  top: 44px;
+  border-radius: 20rpx;
+  position: relative;
+  z-index: 2;
+  height: 141rpx;
+  background: #fff;
+}
+.am_list .am_li {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: center;
+  line-height: 97rpx;
+  font-size: 32rpx;
+}
+.am_list .am_name {
+  font-size: 34rpx;
+  color: #2F2F2F;
+  display: inline-block;
+  background: #fff;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+}
+.am_list .am_active::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 5rpx;
+  background: url("/static/newimg/active.png");
+  background-size: 100% 100%;
+  bottom: 0;
+  left: 0;
+}
+.selectcompanyitem {
+  background-color: antiquewhite;
+}
+.conditions {
+  height: 140rpx;
+  line-height: 96rpx;
+  white-space: nowrap;
+  font-size: 30rpx;
+  color: #666;
+  border-top: 1rpx solid #f8f8f8;
+  margin: -40rpx 0 0 0;
+  padding: 40rpx 0 0 0;
+  background: #fff;
+}
+.conditions .conditions_li {
+  font-weight: bold;
+  display: inline-block;
+  padding: 0 40rpx;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
+}
+.conditions .active {
+  color: #FA436A;
+  border-bottom: 4rpx solid #FA436A;
+}
+.guess-section {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  padding: 0 27rpx;
+  margin: 0 0 100rpx 0;
+}
+.guess-section .guess-left, .guess-section .guess-right {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+}
+.guess-section .guess-left {
+    padding-right: 10rpx;
+}
+.guess-section .guess-right {
+    padding: 0 0 0 10rpx;
+}
+.guess-section .guess-item {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background: #fff;
+    width: 100%;
+    padding-bottom: 40rpx;
+    margin: 17rpx 0 0;
+    -webkit-box-shadow: 0px 0px 9rpx 0px rgba(47, 47, 47, 0.1);
+            box-shadow: 0px 0px 9rpx 0px rgba(47, 47, 47, 0.1);
+}
+.guess-section .image-wrapper {
+    width: 100%;
+    height: 330rpx;
+    border-radius: 3px;
+    overflow: hidden;
+    background: #fff;
+}
+.guess-section .image-wrapper image {
+      width: 100%;
+      height: 100%;
+      opacity: 1;
+}
+.guess-section .title {
+    font-size: 29rpx;
+    color: #303133;
+    margin: 14rpx 0 0;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+       text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.guess-section .price {
+    font-size: 24rpx;
+    color: #fa436a;
+    line-height: 1;
+    margin: 10rpx 0 0;
+}
+.guess-section .guess-first {
+    background: url("/static/newimg/jingxuan.png");
+    background-size: 100% 100%;
+    padding: 5rpx 19rpx 0;
+}
+.guess-section .guess-first .text {
+      color: #fff;
+      font-size: 27rpx;
+      line-height: 55rpx;
+}
+.guess-section .guess-first .image-wrapper {
+      width: 100%;
+      height: 289rpx;
+      background: #2F2F2F;
+      margin: 0 0 9rpx 0;
+}
+.guess-section .guess-first .text2 {
+      color: #B4B4B4;
+      line-height: 30rpx;
+      font-size: 17rpx;
+      text-align: center;
+}
+.guess-section .guess-s-bottom {
+    padding: 0 27rpx 0 11rpx;
+}
+.guess-section .guess-s-bottom .clamp {
+      white-space: normal;
+}
+.guess-section .guess-s-bottom .clamp text {
+      background: #FF0000;
+      color: #fff;
+      font-size: 19rpx;
+      padding: 6rpx 15rpx;
+      border-radius: 13rpx;
+      line-height: 18rpx;
+      display: inline-block;
+      margin: 0 10rpx 0 13rpx;
+}
+.guess-section .guess-shop {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+    padding: 26rpx 17rpx 0 14rpx;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+.guess-section .guess-shop .shop_img {
+      width: 48rpx;
+      height: 48rpx;
+      margin: 0 13rpx 0 0;
+}
+.guess-section .guess-shop .chakan_img {
+      width: 19rpx;
+      height: 16rpx;
+      margin: 0 3rpx 0 0;
+}
+.guess-section .guess-shop .num {
+      font-size: 20rpx;
+      color: #909090;
+      -webkit-box-flex: 1;
+      -webkit-flex: 1;
+          -ms-flex: 1;
+              flex: 1;
+}
+.guess-section .guess-shop .name {
+      -o-text-overflow: ellipsis;
+         text-overflow: ellipsis;
+      font-size: 20rpx;
+      white-space: nowrap;
+      overflow: hidden;
+      margin: 0 27rpx 0 0;
+}
+.guess-section .guess-shop .shop_img, .guess-section .guess-shop .chakan_img, .guess-section .guess-shop .num {
+      -webkit-flex-shrink: 0;
+          -ms-flex-negative: 0;
+              flex-shrink: 0;
+}
+

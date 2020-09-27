@@ -1,0 +1,16 @@
+spring:
+  profiles:
+    active: db, core, wx
+  messages:
+    encoding: UTF-8
+
+server:
+  port: 8091
+
+logging:
+  level:
+    root:  ERROR
+    org.springframework:  ERROR
+    org.mybatis:  ERROR
+    org.jinyuanjava.litemall.wx:  DEBUG
+    org.jinyuanjava.litemall:  ERROR

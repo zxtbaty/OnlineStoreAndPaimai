@@ -1,0 +1,17 @@
+{
+  "navigationBarTitleText": "在线商城",
+  "navigationBarBackgroundColor": "#55036B",
+  "bounce": "none",
+  "type": "transparent",
+  "titleNView": {
+    "searchInput": {
+      "backgroundColor": "rgba(251, 251, 251,.6)",
+      "borderRadius": "16px",
+      "placeholder": "搜索商品名称",
+      "disabled": false,
+      "placeholderColor": "#FBFBFB",
+      "align": "left"
+    }
+  },
+  "usingComponents": {}
+}

@@ -1,0 +1,133 @@
+@charset "UTF-8";
+/* 页面左右间距 */
+/* 文字尺寸 */
+/*文字颜色*/
+/* 边框颜色 */
+/* 图片加载中颜色 */
+/* 行为相关颜色 */
+page {
+  background: #f7f7f7;
+}
+.wp-top {
+  text-align: center;
+  background: #fff;
+  padding: 53rpx 0;
+}
+.wp-top .wx-top-p1 {
+    color: #FF0000;
+    font-size: 31rpx;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+.wp-top .wx-top-p1 image {
+      width: 33rpx;
+      height: 34rpx;
+      margin: 0 9rpx 0 0;
+}
+.wp-top .wp-top-p2 {
+    font-size: 24rpx;
+    margin: 24rpx 0 10rpx 0;
+    font-weight: bold;
+}
+.wp-top .wp-top-p2 .red:before {
+      content: '\FFE5';
+}
+.wp-top .wp-top-p3 {
+    font-size: 24rpx;
+}
+.wp-top .wp-top-btn {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 53rpx 0 0 0;
+    padding: 0 81rpx;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+}
+.wp-top .wp-top-btn view {
+      width: 267rpx;
+      height: 73rpx;
+      font-size: 27rpx;
+      border-radius: 33rpx;
+      line-height: 73rpx;
+}
+.wp-top .wp-top-btn .btn1 {
+      color: #FF0000;
+      border: 1px solid #E93A27;
+}
+.wp-top .wp-top-btn .btn2 {
+      color: #fff;
+      background: -o-linear-gradient(211deg, #f25121, #e93a27);
+      background: linear-gradient(239deg, #f25121, #e93a27);
+}
+.red {
+  color: #FF0000;
+}
+.wp-center {
+  margin: 27rpx 0;
+  background: #fff;
+  padding: 20rpx 27rpx;
+}
+.wp-center view {
+    line-height: 40rpx;
+    font-size: 24rpx;
+    color: #909090;
+}
+.wp-center .right {
+    float: right;
+}
+.wp-bottom {
+  background: #fff;
+  width: 100vw;
+  padding: 27rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.wp-bottom .goods-img {
+    width: 154rpx;
+    height: 146rpx;
+    -webkit-flex-shrink: 0;
+        -ms-flex-negative: 0;
+            flex-shrink: 0;
+    margin: 0 27rpx 0 0;
+}
+.wp-bottom .wp-bottom-right {
+    font-size: 24rpx;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    position: relative;
+}
+.wp-bottom .wp-bottom-right .other {
+      font-size: 20rpx;
+      color: #909090;
+      margin: 10rpx 0 0;
+}
+.wp-bottom .wp-bottom-right .price {
+      color: #FF3B30;
+      font-size: 29rpx;
+      font-weight: bold;
+      position: absolute;
+      bottom: 0;
+}
+.wp-bottom .wp-bottom-right .price:before {
+        content: '\FFE5';
+        font-size: 24rpx;
+}
+

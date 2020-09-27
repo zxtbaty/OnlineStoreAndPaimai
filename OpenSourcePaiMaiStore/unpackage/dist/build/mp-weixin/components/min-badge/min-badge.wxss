@@ -1,0 +1,46 @@
+
+.min-badge.data-v-d136e980 {
+  position: relative;
+  display: inline-block;
+  line-height: 1;
+  vertical-align: middle;
+}
+.min-badge-count.data-v-d136e980 {
+  position: absolute;
+  -webkit-transform: translateX(50%);
+      -ms-transform: translateX(50%);
+          transform: translateX(50%);
+  top: -12rpx;
+  right: 0;
+  height: 30rpx;
+  border-radius: 15rpx;
+  min-width: 30rpx;
+  background: #dd524d;
+  color: #fff;
+  line-height: 30rpx;
+  text-align: center;
+  padding: 0 10rpx;
+  font-size: 20rpx;
+  white-space: nowrap;
+  z-index: 10;
+  -webkit-box-shadow: 0 0 0 1px #fff;
+          box-shadow: 0 0 0 1px #fff;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.min-badge-dot.data-v-d136e980 {
+  position: absolute;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  top: -8rpx;
+  right: -16rpx;
+  height: 16rpx;
+  width: 16rpx;
+  border-radius: 100%;
+  background: #dd524d;
+  z-index: 10;
+  -webkit-box-shadow: 0 0 0 1rpx #fff;
+          box-shadow: 0 0 0 1rpx #fff;
+}
+

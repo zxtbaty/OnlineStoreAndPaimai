@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "我的预约",
+  "usingComponents": {
+    "uni-load-more": "/components/uni-load-more/uni-load-more",
+    "empty": "/components/empty",
+    "min-badge": "/components/min-badge/min-badge"
+  }
+}

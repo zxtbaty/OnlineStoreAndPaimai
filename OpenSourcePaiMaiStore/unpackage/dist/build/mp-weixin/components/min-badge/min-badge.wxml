@@ -1,0 +1,1 @@
+<view class="min-badge data-v-d136e980"><slot></slot><block wx:if="{{dot}}"><view class="min-badge-dot data-v-d136e980"></view></block><block wx:else><block wx:if="{{count}}"><view class="min-badge-count data-v-d136e980">{{finalCount}}</view></block></block></view>

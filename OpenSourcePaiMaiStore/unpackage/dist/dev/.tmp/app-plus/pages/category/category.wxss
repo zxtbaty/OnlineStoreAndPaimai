@@ -1,0 +1,359 @@
+@charset "UTF-8";
+/* 页面左右间距 */
+/* 文字尺寸 */
+/*文字颜色*/
+/* 边框颜色 */
+/* 图片加载中颜色 */
+/* 行为相关颜色 */
+page,
+.content {
+  height: 100%;
+  /* background-color: #f8f8f8; */
+  background-color: #f9f9f9;
+}
+.content {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.left-aside {
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
+  width: 200rpx;
+  height: 100%;
+  background-color: #fff;
+}
+.f-item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 100rpx;
+  font-size: 28rpx;
+  color: #606266;
+  position: relative;
+}
+.f-item.active {
+    color: #fa436a;
+    background: #f8f8f8;
+}
+.f-item.active:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+              transform: translateY(-50%);
+      height: 36rpx;
+      width: 8rpx;
+      background-color: #fa436a;
+      border-radius: 0 4px 4px 0;
+      opacity: .8;
+}
+.right-aside {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  overflow: hidden;
+  padding-left: 20rpx;
+}
+.s-item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 70rpx;
+  padding-top: 8rpx;
+  font-size: 28rpx;
+  color: #303133;
+}
+.t-list {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  width: 100%;
+  background: #fff;
+  padding-top: 12rpx;
+}
+.t-list:after {
+    content: '';
+    -webkit-box-flex: 99;
+    -webkit-flex: 99;
+        -ms-flex: 99;
+            flex: 99;
+    height: 0;
+}
+.t-item {
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 176rpx;
+  font-size: 26rpx;
+  color: #666;
+  padding-bottom: 20rpx;
+}
+.t-item image {
+    width: 140rpx;
+    height: 140rpx;
+}
+.c_tab {
+  width: 100vw;
+  position: fixed;
+  z-index: 999;
+  height: 67rpx;
+  top: 44px;
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-flex;
+  font-size: 29rpx;
+  /* box-shadow:0px 0px 14px 0px rgba(0, 0, 0, 0.15); */
+  /* border-bottom: 2upx solid #f8f8f8; */
+  /* padding: 0 20upx;
+		box-sizing: border-box; */
+}
+.cg_f_list {
+  /* display: flex;
+		display: -webkit-flex;
+		width: 100vw;
+		flex-wrap: wrap;
+		-webkit-flex-wrap: wrap; */
+  white-space: nowrap;
+  overflow: auto;
+  width: 750rpx;
+  /* width: 650upx; */
+}
+.cg_c_list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  margin: 20rpx 0 0;
+  position: fixed;
+  z-index: 99;
+  top: 44px;
+  margin: 110rpx 0 0 0;
+  background: #fff;
+}
+.cg_show_cl {
+  width: 100rpx;
+  height: 100rpx;
+  /* padding: 20upx; */
+  /* box-sizing: border-box; */
+}
+.cg_show_cl .cd_show_btnimg {
+  width: 100%;
+  height: 100%;
+}
+.cg_f_li {
+  display: inline-block;
+  padding: 0rpx 35rpx;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  line-height: 67rpx;
+  position: relative;
+}
+.cg_f_li:after {
+    position: absolute;
+    content: '';
+    width: 1px;
+    height: 30rpx;
+    background: #E7E7E7;
+    right: 0;
+    top: 17rpx;
+}
+.cg_c_list .active {
+  border: 2rpx solid #fa436a;
+}
+.cg_c_li {
+  padding: 10rpx 14rpx;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 32rpx;
+  border-radius: 8rpx;
+  border: 2rpx solid #f8f8f8;
+  margin: 10rpx;
+}
+.active {
+  color: #FF0000;
+}
+/* 	.cg_f_list .active::after {
+		position: absolute;
+		content: '';
+		width: 88%;
+		height: 2upx;
+		background: rgb(250, 67, 106);
+		left: 6%;
+		bottom: 0;
+	}
+ */
+.guess-section {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  padding: 0 27rpx;
+  width: 100vw;
+  margin: 67rpx 0 100rpx 0;
+}
+.guess-section .guess-left, .guess-section .guess-right {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+}
+.guess-section .guess-left {
+    padding-right: 10rpx;
+}
+.guess-section .guess-right {
+    padding: 0 0 0 10rpx;
+}
+.guess-section .guess-item {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    -webkit-flex-shrink: 0;
+        -ms-flex-negative: 0;
+            flex-shrink: 0;
+    padding-bottom: 22rpx;
+    margin: 17rpx 0 0 0;
+    background: #fff;
+    -webkit-box-shadow: 0px 0px 9rpx 0px rgba(47, 47, 47, 0.1);
+            box-shadow: 0px 0px 9rpx 0px rgba(47, 47, 47, 0.1);
+}
+.guess-section .image-wrapper {
+    width: 100%;
+    height: 327rpx;
+    border-radius: 3px;
+    overflow: hidden;
+}
+.guess-section .image-wrapper image {
+      width: 100%;
+      height: 100%;
+      opacity: 1;
+}
+.guess-section .title {
+    font-size: 29rpx;
+    color: #303133;
+    margin: 14rpx 0 0;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+       text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.guess-section .price {
+    font-size: 24rpx;
+    color: #FF3B30;
+    font-weight: bold;
+}
+.guess-section .guess-s-bottom {
+    padding: 0 27rpx 0 11rpx;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: left;
+    -webkit-justify-content: left;
+        -ms-flex-pack: left;
+            justify-content: left;
+}
+.guess-section .guess-s-bottom .clamp {
+      white-space: normal;
+}
+.guess-section .guess-s-bottom .clamp text {
+      background: #FF0000;
+      color: #fff;
+      font-size: 19rpx;
+      padding: 6rpx 15rpx;
+      border-radius: 13rpx;
+      line-height: 18rpx;
+      display: inline-block;
+      margin: 0 10rpx 0 13rpx;
+}
+.guess-section .guess-bug {
+    padding: 0 27rpx 0 11rpx;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin: 3rpx 0 0 0;
+}
+.guess-section .guess-bug image {
+      width: 48rpx;
+      height: 48rpx;
+}
+

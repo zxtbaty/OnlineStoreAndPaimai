@@ -1,0 +1,24 @@
+{
+  "name": "airShop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "dependencies": {
+    "@dcloudio/uni-ui": "^1.0.7",
+    "axios": "^0.18.0",
+    "babel-polyfill": "^6.26.0",
+    "jweixin-module": "^1.4.1",
+    "weixin-js-sdk": "^1.4.0-test",
+	"moment": "^2.24.0",
+	"node-sass": "^4.13.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+
+ 

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "创建订单",
+  "usingComponents": {
+    "rui-date-picker": "/components/rattenking-dtpicker/rattenking-dtpicker"
+  }
+}

@@ -1,0 +1,345 @@
+{
+	"pages": [
+
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "专场拍卖",
+				"navigationStyle": "custom",
+				"app-plus": {
+					"bounce": "none",
+					"titleNView": {
+						"searchInput": {
+							"backgroundColor": "rgba(231, 231, 231,1)",
+							"borderRadius": "16px",
+							"placeholder": "请输入拍品名称 如：国画",
+							"disabled": true,
+							"placeholderColor": "#606266"
+						},
+						"buttons": [{
+								"fontSrc": "/static/yticon.ttf",
+								"text": "\ue60d",
+								"fontSize": "26",
+								"color": "#303133",
+								"float": "left",
+								"background": "rgba(0,0,0,0)"
+							},
+							{
+								"fontSrc": "/static/yticon.ttf",
+								"text": "\ue744",
+								"fontSize": "27",
+								"color": "#303133",
+								"background": "rgba(0,0,0,0)",
+								"redDot": true
+							}
+						]
+					}
+				}
+			}
+		
+		},
+		
+		
+		{
+			"path": "pages/product/product",
+			"style": {
+				"navigationBarTitleText": "详情展示",
+				"app-plus": {
+					"titleNView": {
+						"type": "transparent"
+					}
+				}
+			}
+		}, 
+		{
+			"path": "pages/index/zhuanchangdetail",
+			"style": {
+				"navigationBarTitleText": "专场拍卖详情展示",
+				"app-plus": {
+					"titleNView": {
+						"type": "transparent"
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/everyone/paimaidetail",
+			"style": {
+				"navigationBarTitleText": "商品拍卖详情展示",
+				"app-plus": {
+					"titleNView": {
+						"type": "transparent"
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/private/dingzhidetail",
+			"style": {
+				"navigationBarTitleText": "私人订制详情页",
+				"app-plus": {
+					"titleNView": {
+						"type": "transparent"
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/set/set",
+			"style": {
+				"navigationBarTitleText": "设置"
+			}
+		},
+
+		{
+			"path": "pages/userinfo/userinfo",
+			"style": {
+				"navigationBarTitleText": "修改资料"
+			}
+		}, 
+		{
+			"path": "pages/public/login",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false,
+					"animationType": "slide-in-bottom"
+				}
+			}
+		}, 
+		{
+			"path": "pages/user/user",
+			"style": {
+				"navigationBarTitleText": "我的",
+				// #ifdef MP
+				"navigationStyle": "custom",
+				// #endif
+				"app-plus": {
+					"bounce": "none",
+					"titleNView": false
+				}
+			}
+		},
+		{
+			"path": "pages/order/order",
+			"style": {
+				"navigationBarTitleText": "我的订单",
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+		}, 
+		{
+			"path": "pages/order/orderdetail",
+			"style": {
+				"navigationBarTitleText": "订单详情"
+			}
+		},
+		{
+			"path": "pages/money/money",
+			"style": {}
+		}, 
+		{
+			"path": "pages/order/createOrder",
+			"style": {
+				"navigationBarTitleText": "创建订单"
+			}
+		}, 
+		{
+			"path": "pages/private/yudingOrder",
+			"style": {
+				"navigationBarTitleText": "私人定制订单"
+			}
+		}, 
+		{
+			"path": "pages/user/myOffer",
+			"style": {
+				"navigationBarTitleText": "我的出价"
+			}
+		}, 
+		{
+			"path": "pages/user/myCharge",
+			"style": {
+				"navigationBarTitleText": "我的充值"
+			}
+		}, 
+		{
+			"path": "pages/order/backOrder",
+			"style": {
+				"navigationBarTitleText": "退款/售后",
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+		},
+		{
+			"path": "pages/user/Contactus",
+			"style": {
+				"navigationBarTitleText": "联系我们"
+			}
+		},
+		{
+			"path": "pages/user/questionlist",
+			"style": {
+				"navigationBarTitleText": "帮助中心"
+			}
+		},
+		{
+			"path": "pages/address/address",
+			"style": {
+				"navigationBarTitleText": "收货地址"
+			}
+		}, {
+			"path": "pages/address/addressManage",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		}, {
+			"path": "pages/money/pay",
+			"style": {
+				"navigationBarTitleText": "支付"
+			}
+		},
+		{
+			"path": "pages/money/paySuccess",
+			"style": {
+				"navigationBarTitleText": "支付成功"
+			}
+		}
+	    ,{
+            "path" : "pages/notice/notice",
+            "style" : {
+				"navigationBarTitleText": "通知"
+			}
+        },
+		{
+			"path": "pages/public/tologin",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false,
+					"animationType": "slide-in-bottom"
+				}
+			}
+		}, 
+
+		{
+		    "path" : "pages/everyone/everyone",
+				"style": {
+				"navigationBarTitleText": "大家拍",
+				"navigationStyle": "custom",
+				"app-plus": {
+					"bounce": "none",
+					"titleNView": {
+						"searchInput": {
+							"backgroundColor": "rgba(231, 231, 231,.7)",
+							"borderRadius": "16px",
+							"placeholder": "请输入拍品名称 如：国画",
+							"disabled": true,
+							"placeholderColor": "#606266"
+						},
+						"buttons": [{
+								"fontSrc": "/static/yticon.ttf",
+								"text": "\ue60d",
+								"fontSize": "26",
+								"color": "#303133",
+								"float": "left",
+								"background": "rgba(0,0,0,0)"
+							},
+							{
+								"fontSrc": "/static/yticon.ttf",
+								"text": "\ue744",
+								"fontSize": "27",
+								"color": "#303133",
+								"background": "rgba(0,0,0,0)",
+								"redDot": true
+							}
+						]
+					}
+				}
+			}
+			 
+		},
+		{
+		    "path" : "pages/private/private",
+				"style": {
+				"navigationBarTitleText": "私人订制",
+				"navigationStyle": "custom",
+				"app-plus": {
+					"bounce": "none",
+					"titleNView": {
+						"searchInput": {
+							"backgroundColor": "rgba(231, 231, 231,0.7)",
+							"borderRadius": "16px",
+							"placeholder": "请输入订制品名称 如：签名",
+							"disabled": true,
+							"placeholderColor": "#606266"
+						},
+						"buttons": [{
+								"fontSrc": "/static/yticon.ttf",
+								"text": "\ue60d",
+								"fontSize": "26",
+								"color": "#303133",
+								"float": "left",
+								"background": "rgba(0,0,0,0)"
+							},
+							{
+								"fontSrc": "/static/yticon.ttf",
+								"text": "\ue744",
+								"fontSize": "27",
+								"color": "#303133",
+								"background": "rgba(0,0,0,0)",
+								"redDot": true
+							}
+						]
+					}
+				}
+			}
+			 
+		}
+        
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#FFFFFF",
+		"backgroundColor": "#f8f8f8"
+	},
+	 //  "globalStyle": {
+		// 	"navigationStyle": "custom"
+		// },
+	"tabBar": {
+		"color": "#C0C4CC",
+		"selectedColor": "#fa436a",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"list": [{
+				"pagePath": "pages/index/index",
+				"iconPath": "static/tab-auction.png",
+				"selectedIconPath": "static/tab-auction-current.png",
+				"text": "专场拍"
+			},
+			 {
+					"pagePath": "pages/everyone/everyone",
+					"iconPath": "static/tab-user-group.png",
+					"selectedIconPath": "static/tab-user-group-current.png",
+					"text": "大家拍"
+				},
+			
+			{
+				"pagePath": "pages/private/private",
+				"iconPath": "static/private.png",
+				"selectedIconPath": "static/private-current.png",
+				"text": "私人定制"
+			},
+			{
+				"pagePath": "pages/user/user",
+				"iconPath": "static/tab-my.png",
+				"selectedIconPath": "static/tab-my-current.png",
+				"text": "我的"
+			}
+		]
+	}
+}

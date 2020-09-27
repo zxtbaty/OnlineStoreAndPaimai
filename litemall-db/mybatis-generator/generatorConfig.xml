@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+    <context id="mysqlgenerator" targetRuntime="MyBatis3">
+        <property name="autoDelimitKeywords" value="true"/>
+        <!--可以使用``包括字段名，避免字段名与sql保留字冲突报错-->
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+
+        <!-- 自动生成toString方法 -->
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
+        <!-- 自动生成equals方法和hashcode方法 -->
+        <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"/>
+
+        <!-- 非官方插件 https://github.com/itfsw/mybatis-generator-plugin -->
+        <!-- 查询单条数据插件 -->
+        <plugin type="com.itfsw.mybatis.generator.plugins.SelectOneByExamplePlugin"/>
+        <!-- 查询结果选择性返回插件 -->
+        <plugin type="com.itfsw.mybatis.generator.plugins.SelectSelectivePlugin"/>
+        <!-- Example Criteria 增强插件 -->
+        <plugin type="com.itfsw.mybatis.generator.plugins.ExampleEnhancedPlugin"/>
+        <!-- 数据Model属性对应Column获取插件 -->
+        <plugin type="com.itfsw.mybatis.generator.plugins.ModelColumnPlugin"/>
+        <!-- 逻辑删除插件 -->
+        <plugin type="com.itfsw.mybatis.generator.plugins.LogicalDeletePlugin">
+            <!-- 这里配置的是全局逻辑删除列和逻辑删除值，当然在table中配置的值会覆盖该全局配置 -->
+            <!-- 逻辑删除列类型只能为数字、字符串或者布尔类型 -->
+            <property name="logicalDeleteColumn" value="deleted"/>
+            <!-- 逻辑删除-已删除值 -->
+            <property name="logicalDeleteValue" value="1"/>
+            <!-- 逻辑删除-未删除值 -->
+            <property name="logicalUnDeleteValue" value="0"/>
+        </plugin>
+
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <!--<property name="suppressAllComments" value="true"/>-->
+        </commentGenerator>
+
+        <!--数据库连接信息-->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://154.8.142.207:3306/litemall?useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=UTC&amp;verifyServerCertificate=false&amp;useSSL=false"
+                        userId="root"
+                        password="Zxtbaty007"/>
+        <javaTypeResolver>
+            <property name="useJSR310Types" value="true"/>
+        </javaTypeResolver>
+
+        <javaModelGenerator targetPackage="org.jinyuanjava.litemall.db.domain" targetProject="src/main/java"/>
+        <sqlMapGenerator targetPackage="org.jinyuanjava.litemall.db.dao" targetProject="src/main/resources"/>
+        <javaClientGenerator type="XMLMAPPER" targetPackage="org.jinyuanjava.litemall.db.dao"
+                             targetProject="src/main/java"/>
+        <!--表名-->
+        <table tableName="litemall_ad">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="litemall_home_icon">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="litemall_home_background_image">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="litemall_company">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="litemall_company_brand">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="litemall_company_hangzhanlou">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+
+        <table tableName="litemall_store">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <columnOverride column="work_week" javaType="java.lang.String[]"
+              typeHandler="org.jinyuanjava.litemall.db.mybatis.JsonStringArrayTypeHandler"/>
+            <columnOverride column="work_time" javaType="java.lang.String[]"
+                            typeHandler="org.jinyuanjava.litemall.db.mybatis.JsonStringArrayTypeHandler"/>
+            <columnOverride column="yuyue_week" javaType="java.lang.String[]"
+                            typeHandler="org.jinyuanjava.litemall.db.mybatis.JsonStringArrayTypeHandler"/>
+            <columnOverride column="yuyue_time" javaType="java.lang.String[]"
+                            typeHandler="org.jinyuanjava.litemall.db.mybatis.JsonStringArrayTypeHandler"/>
+        </table>
+        <table tableName="litemall_store_brand">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="litemall_dic_main">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="litemall_dic_code">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="litemall_goods_recommend">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="litemall_goods_store">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <columnOverride column="store_ids" javaType="java.lang.Integer[]"
+                            typeHandler="org.jinyuanjava.litemall.db.mybatis.JsonIntegerArrayTypeHandler"/>
+        </table>
+
+        <table tableName="litemall_promotion_seckill_rule">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <columnOverride column="goods_product_specifications" javaType="java.lang.String[]"
+                            typeHandler="org.jinyuanjava.litemall.db.mybatis.JsonStringArrayTypeHandler"/>
+        </table>
+        <table tableName="litemall_promotion_seckill_order">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="litemall_promotion_goods_rule">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <columnOverride column="goods_product_specifications" javaType="java.lang.String[]"
+                            typeHandler="org.jinyuanjava.litemall.db.mybatis.JsonStringArrayTypeHandler"/>
+        </table>
+        <table tableName="litemall_promotion_goods_user_order">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="litemall_promotion_goods_rule_user">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+
+        <table tableName="litemall_promotion_goods_rebate_rule">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="litemall_promotion_goods_rebate_goods">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <columnOverride column="goods_product_specifications" javaType="java.lang.String[]"
+                            typeHandler="org.jinyuanjava.litemall.db.mybatis.JsonStringArrayTypeHandler"/>
+
+        </table>
+        <table tableName="litemall_promotion_goods_rebate_order_goods">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="litemall_huodong_main">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="litemall_huodong_detail_goods_list">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="litemall_huodong_detail_pic_link">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="litemall_address">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="litemall_admin">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <columnOverride column="role_ids" javaType="java.lang.Integer[]"
+                            typeHandler="org.jinyuanjava.litemall.db.mybatis.JsonIntegerArrayTypeHandler"/>
+        </table>
+        <table tableName="litemall_brand">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="litemall_cart">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <columnOverride column="specifications" javaType="java.lang.String[]"
+                            typeHandler="org.jinyuanjava.litemall.db.mybatis.JsonStringArrayTypeHandler"/>
+        </table>
+        <table tableName="litemall_category">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="litemall_collect">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="litemall_comment">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <columnOverride column="pic_urls" javaType="java.lang.String[]"
+                            typeHandler="org.jinyuanjava.litemall.db.mybatis.JsonStringArrayTypeHandler"/>
+        </table>
+
+        <table tableName="litemall_feedback">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <columnOverride column="pic_urls" javaType="java.lang.String[]"
+                            typeHandler="org.jinyuanjava.litemall.db.mybatis.JsonStringArrayTypeHandler"/>
+        </table>
+
+        <table tableName="litemall_footprint">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="litemall_goods">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <columnOverride column="gallery_big" javaType="java.lang.String[]"
+                            typeHandler="org.jinyuanjava.litemall.db.mybatis.JsonStringArrayTypeHandler"/>
+            <columnOverride column="gallery" javaType="java.lang.String[]"
+                            typeHandler="org.jinyuanjava.litemall.db.mybatis.JsonStringArrayTypeHandler"/>
+            <columnOverride column="category_name" javaType="java.lang.String[]"
+                            typeHandler="org.jinyuanjava.litemall.db.mybatis.JsonStringArrayTypeHandler"/>
+        </table>
+        <table tableName="litemall_goods_attribute">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="litemall_goods_specification">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="litemall_goods_product">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <columnOverride column="specifications" javaType="java.lang.String[]"
+                            typeHandler="org.jinyuanjava.litemall.db.mybatis.JsonStringArrayTypeHandler"/>
+            <columnOverride column="specification_ids" javaType="java.lang.String[]"
+                            typeHandler="org.jinyuanjava.litemall.db.mybatis.JsonStringArrayTypeHandler"/>
+            <columnOverride column="store_ids" javaType="java.lang.Integer[]"
+                            typeHandler="org.jinyuanjava.litemall.db.mybatis.JsonIntegerArrayTypeHandler"/>
+            <columnOverride column="store_names" javaType="java.lang.String[]"
+                            typeHandler="org.jinyuanjava.litemall.db.mybatis.JsonStringArrayTypeHandler"/>
+        </table>
+        <table tableName="litemall_issue">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="litemall_keyword">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="litemall_order">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="litemall_order_goods">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <columnOverride column="specifications" javaType="java.lang.String[]"
+                            typeHandler="org.jinyuanjava.litemall.db.mybatis.JsonStringArrayTypeHandler"/>
+            <columnOverride column="comments" javaType="java.lang.Integer[]"
+                            typeHandler="org.jinyuanjava.litemall.db.mybatis.JsonIntegerArrayTypeHandler"/>
+
+        </table>
+        <table tableName="litemall_order_tickets">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="litemall_fapiao_info">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="litemall_order_fapiao">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="litemall_pick_site">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <columnOverride column="site_pick_week" javaType="java.lang.String[]"
+                            typeHandler="org.jinyuanjava.litemall.db.mybatis.JsonStringArrayTypeHandler"/>
+            <columnOverride column="site_pick_time" javaType="java.lang.String[]"
+                            typeHandler="org.jinyuanjava.litemall.db.mybatis.JsonStringArrayTypeHandler"/>
+        </table>
+
+        <table tableName="litemall_region">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="litemall_search_history">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="litemall_storage">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="litemall_topic">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <columnOverride column="goods" javaType="java.lang.Integer[]"
+                            typeHandler="org.jinyuanjava.litemall.db.mybatis.JsonIntegerArrayTypeHandler"/>
+        </table>
+        <table tableName="litemall_user">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="litemall_system">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+
+        <table tableName="litemall_user_formid">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+
+        <table tableName="litemall_groupon_rules">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <columnOverride column="goods_product_specifications" javaType="java.lang.String[]"
+                            typeHandler="org.jinyuanjava.litemall.db.mybatis.JsonStringArrayTypeHandler"/>
+        </table>
+        <table tableName="litemall_groupon_order">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="litemall_coupon">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <columnOverride column="goods_value" javaType="java.lang.Integer[]"
+                            typeHandler="org.jinyuanjava.litemall.db.mybatis.JsonIntegerArrayTypeHandler"/>
+        </table>
+        <table tableName="litemall_coupon_user">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="litemall_role">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="litemall_menu">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="litemall_role_menu">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="litemall_permission">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="litemall_log">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="litemall_userinfo_def">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="litemall_userinfo_pub">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="litemall_opadmin_def">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="litemall_opadmin_pub">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="litemall_opadmin_info">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+
+        <table tableName="litemall_user_order_info">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="litemall_interface_monitor">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="litemall_article_class">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="litemall_article_list">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="litemall_wenboguan_article">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="litemall_weboguan_recommend">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <!--以下是通过视图生成的结构-->
+        <table tableName="view_litemall_goods_recommend">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+
+        <table tableName="view_homepage_recommend_ec">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="view_homepage_recommend_seckill">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="view_homepage_recommend_groupon">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="view_list_recommend_ec">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="view_list_recommend_seckill">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="view_list_recommend_groupon">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+
+        <table tableName="view_seckill_orders">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="view_groupon_orders">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="view_user_goods_orders">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="view_promotion_goods_rule_user">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="view_list_recommend_goods_user">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="view_litemall_goods_product">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <columnOverride column="specifications" javaType="java.lang.String[]"
+                            typeHandler="org.jinyuanjava.litemall.db.mybatis.JsonStringArrayTypeHandler"/>
+        </table>
+        <table tableName="view_user_order_info">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="view_order_goods">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="view_promotion_goods_rebate_rule_goods">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="view_promotion_goods_rebate_rule_order_goods">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="view_role_menu">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="view_auction_zhuanchang_goods_current">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="view_auciton_zhuanchang_order_current">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="view_auction_dajia_order_current">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="view_private_make_order">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="view_auction_zhuanchang_offer_current">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="view_auction_dajia_offer_current">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="view_user_tickets">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+
+        <table tableName="view_user_tickets">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="view_list_auction">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="view_list_private_make">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="view_user_charge_money">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="view_user_charge_money_lock">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="view_promotion_goods_detail">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="view_weboguan_recommend">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+
+
+<!--        以下是拍卖特有规则涉及的表-->
+        <table tableName="litemall_authororcorp">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <columnOverride column="gallery" javaType="java.lang.String[]"
+                            typeHandler="org.jinyuanjava.litemall.db.mybatis.JsonStringArrayTypeHandler"/>
+        </table>
+        <table tableName="litemall_authororcorp_para">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="litemall_authororcorp_items">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+
+
+        <table tableName="litemall_auction_zhuanchang_rule_current">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <columnOverride column="author_zuopin" javaType="java.lang.String[]"
+                            typeHandler="org.jinyuanjava.litemall.db.mybatis.JsonStringArrayTypeHandler"/>
+            <columnOverride column="auction_gallery" javaType="java.lang.String[]"
+                            typeHandler="org.jinyuanjava.litemall.db.mybatis.JsonStringArrayTypeHandler"/>
+            <columnOverride column="auction_gallery_big" javaType="java.lang.String[]"
+                            typeHandler="org.jinyuanjava.litemall.db.mybatis.JsonStringArrayTypeHandler"/>
+        </table>
+        <table tableName="litemall_auction_zhuanchang_goods_current">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <columnOverride column="gallery_big" javaType="java.lang.String[]"
+                            typeHandler="org.jinyuanjava.litemall.db.mybatis.JsonStringArrayTypeHandler"/>
+            <columnOverride column="galllery_small" javaType="java.lang.String[]"
+                            typeHandler="org.jinyuanjava.litemall.db.mybatis.JsonStringArrayTypeHandler"/>
+
+        </table>
+        <table tableName="litemall_auction_zhuanchang_offer_current">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="litemall_auciton_zhuanchang_order_current">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="litemall_auction_dajia_order_current">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="litemall_auction_dajia_rule_current">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <columnOverride column="gallery_big" javaType="java.lang.String[]"
+                            typeHandler="org.jinyuanjava.litemall.db.mybatis.JsonStringArrayTypeHandler"/>
+            <columnOverride column="galllery_small" javaType="java.lang.String[]"
+                            typeHandler="org.jinyuanjava.litemall.db.mybatis.JsonStringArrayTypeHandler"/>
+
+        </table>
+        <table tableName="litemall_auction_dajia_offer_current">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+
+        </table>
+        <table tableName="litemall_private_make_rule">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+             <columnOverride column="gallery_big" javaType="java.lang.String[]"
+                            typeHandler="org.jinyuanjava.litemall.db.mybatis.JsonStringArrayTypeHandler"/>
+            <columnOverride column="galllery_small" javaType="java.lang.String[]"
+                            typeHandler="org.jinyuanjava.litemall.db.mybatis.JsonStringArrayTypeHandler"/>
+
+        </table>
+        <table tableName="litemall_private_make_order">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="litemall_user_charge_money">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="litemall_user_charge_money_lock">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+
+    </context>
+</generatorConfiguration>

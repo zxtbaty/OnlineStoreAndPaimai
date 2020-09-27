@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.jinyuanjava.litemall.db.dao.OrderMapper">
+    <update id="updateWithOptimisticLocker" parameterType="map">
+        update litemall_order
+<!--         <set>
+            <if test="order.id != null">
+                id = #{order.id,jdbcType=INTEGER},
+            </if>
+            <if test="order.userId != null">
+                user_id = #{order.userId,jdbcType=INTEGER},
+            </if>
+            <if test="order.orderSn != null">
+                order_sn = #{order.orderSn,jdbcType=VARCHAR},
+            </if>
+            <if test="order.orderStatus != null">
+                order_status = #{order.orderStatus,jdbcType=SMALLINT},
+            </if>
+            <if test="order.consignee != null">
+                consignee = #{order.consignee,jdbcType=VARCHAR},
+            </if>
+            <if test="order.mobile != null">
+                mobile = #{order.mobile,jdbcType=VARCHAR},
+            </if>
+            <if test="order.address != null">
+                address = #{order.address,jdbcType=VARCHAR},
+            </if>
+            <if test="order.message != null">
+                message = #{order.message,jdbcType=VARCHAR},
+            </if>
+            <if test="order.goodsPrice != null">
+                goods_price = #{order.goodsPrice,jdbcType=DECIMAL},
+            </if>
+            <if test="order.freightPrice != null">
+                freight_price = #{order.freightPrice,jdbcType=DECIMAL},
+            </if>
+            <if test="order.couponPrice != null">
+                coupon_price = #{order.couponPrice,jdbcType=DECIMAL},
+            </if>
+            <if test="order.integralPrice != null">
+                integral_price = #{order.integralPrice,jdbcType=DECIMAL},
+            </if>
+            <if test="order.grouponPrice != null">
+                groupon_price = #{order.grouponPrice,jdbcType=DECIMAL},
+            </if>
+            <if test="order.orderPrice != null">
+                order_price = #{order.orderPrice,jdbcType=DECIMAL},
+            </if>
+            <if test="order.actualPrice != null">
+                actual_price = #{order.actualPrice,jdbcType=DECIMAL},
+            </if>
+            <if test="order.payId != null">
+                pay_id = #{order.payId,jdbcType=VARCHAR},
+            </if>
+            <if test="order.payTime != null">
+                pay_time = #{order.payTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="order.shipSn != null">
+                ship_sn = #{order.shipSn,jdbcType=VARCHAR},
+            </if>
+            <if test="order.shipChannel != null">
+                ship_channel = #{order.shipChannel,jdbcType=VARCHAR},
+            </if>
+            <if test="order.shipTime != null">
+                ship_time = #{order.shipTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="order.confirmTime != null">
+                confirm_time = #{order.confirmTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="order.comments != null">
+                comments = #{order.comments,jdbcType=SMALLINT},
+            </if>
+            <if test="order.endTime != null">
+                end_time = #{order.endTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="order.addTime != null">
+                add_time = #{order.addTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="order.updateTime != null">
+                update_time = #{order.updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="order.deleted != null">
+                deleted = #{order.deleted,jdbcType=BIT},
+            </if>
+            <if test="order.yuyueStatusCode != null">
+                yuyue_status_code = #{order.yuyueStatusCode,jdbcType=SMALLINT},
+            </if>
+              <if test="order.yuyueStatusName != null">
+                yuyue_status_name = #{order.yuyueStatusName,jdbcType=VARCHAR},
+            </if>
+        </set> -->
+
+        <set>
+	      <if test="order.id != null">
+	        id = #{order.id,jdbcType=INTEGER},
+	      </if>
+	      <if test="order.userId != null">
+	        user_id = #{order.userId,jdbcType=INTEGER},
+	      </if>
+	      <if test="order.orderSn != null">
+	        order_sn = #{order.orderSn,jdbcType=VARCHAR},
+	      </if>
+	      <if test="order.orderStatus != null">
+	        order_status = #{order.orderStatus,jdbcType=SMALLINT},
+	      </if>
+	      <if test="order.consignee != null">
+	        consignee = #{order.consignee,jdbcType=VARCHAR},
+	      </if>
+	      <if test="order.mobile != null">
+	        mobile = #{order.mobile,jdbcType=VARCHAR},
+	      </if>
+	      <if test="order.address != null">
+	        address = #{order.address,jdbcType=VARCHAR},
+	      </if>
+	      <if test="order.message != null">
+	        message = #{order.message,jdbcType=VARCHAR},
+	      </if>
+	      <if test="order.goodsPrice != null">
+	        goods_price = #{order.goodsPrice,jdbcType=DECIMAL},
+	      </if>
+	      <if test="order.freightPrice != null">
+	        freight_price = #{order.freightPrice,jdbcType=DECIMAL},
+	      </if>
+	      <if test="order.couponPrice != null">
+	        coupon_price = #{order.couponPrice,jdbcType=DECIMAL},
+	      </if>
+	      <if test="order.integralPrice != null">
+	        integral_price = #{order.integralPrice,jdbcType=DECIMAL},
+	      </if>
+	      <if test="order.grouponPrice != null">
+	        groupon_price = #{order.grouponPrice,jdbcType=DECIMAL},
+	      </if>
+	      <if test="order.orderPrice != null">
+	        order_price = #{order.orderPrice,jdbcType=DECIMAL},
+	      </if>
+	      <if test="order.actualPrice != null">
+	        actual_price = #{order.actualPrice,jdbcType=DECIMAL},
+	      </if>
+	      <if test="order.payId != null">
+	        pay_id = #{order.payId,jdbcType=VARCHAR},
+	      </if>
+	      <if test="order.payTime != null">
+	        pay_time = #{order.payTime,jdbcType=TIMESTAMP},
+	      </if>
+	      <if test="order.shipSn != null">
+	        ship_sn = #{order.shipSn,jdbcType=VARCHAR},
+	      </if>
+	      <if test="order.shipChannel != null">
+	        ship_channel = #{order.shipChannel,jdbcType=VARCHAR},
+	      </if>
+	      <if test="order.shipTime != null">
+	        ship_time = #{order.shipTime,jdbcType=TIMESTAMP},
+	      </if>
+	      <if test="order.confirmTime != null">
+	        confirm_time = #{order.confirmTime,jdbcType=TIMESTAMP},
+	      </if>
+	      <if test="order.comments != null">
+	        comments = #{order.comments,jdbcType=SMALLINT},
+	      </if>
+	      <if test="order.endTime != null">
+	        end_time = #{order.endTime,jdbcType=TIMESTAMP},
+	      </if>
+	      <if test="order.typeCode != null">
+	        type_code = #{order.typeCode,jdbcType=VARCHAR},
+	      </if>
+	      <if test="order.typeName != null">
+	        type_name = #{order.typeName,jdbcType=VARCHAR},
+	      </if>
+	      <if test="order.sourceCode != null">
+	        source_code = #{order.sourceCode,jdbcType=VARCHAR},
+	      </if>
+	      <if test="order.sourceName != null">
+	        source_name = #{order.sourceName,jdbcType=VARCHAR},
+	      </if>
+	      <if test="order.yuyueComId != null">
+	        yuyue_com_id = #{order.yuyueComId,jdbcType=INTEGER},
+	      </if>
+	      <if test="order.yuyueComName != null">
+	        yuyue_com_name = #{order.yuyueComName,jdbcType=VARCHAR},
+	      </if>
+	      <if test="order.yuyueComHangzhanlou != null">
+	        yuyue_com_hangzhanlou = #{order.yuyueComHangzhanlou,jdbcType=VARCHAR},
+	      </if>
+	      <if test="order.yuyueStoreId != null">
+	        yuyue_store_id = #{order.yuyueStoreId,jdbcType=INTEGER},
+	      </if>
+	      <if test="order.yuyueStoreName != null">
+	        yuyue_store_name = #{order.yuyueStoreName,jdbcType=VARCHAR},
+	      </if>
+	      <if test="order.yuyueFetchTime != null">
+	        yuyue_fetch_time = #{order.yuyueFetchTime,jdbcType=TIMESTAMP},
+	      </if>
+	      <if test="order.yuyueFetchExpireTime != null">
+	        yuyue_fetch_expire_time = #{order.yuyueFetchExpireTime,jdbcType=TIMESTAMP},
+	      </if>
+	      <if test="order.yuyueStatusCode != null">
+	        yuyue_status_code = #{order.yuyueStatusCode,jdbcType=SMALLINT},
+	      </if>
+	      <if test="order.yuyueStatusName != null">
+	        yuyue_status_name = #{order.yuyueStatusName,jdbcType=VARCHAR},
+	      </if>
+	      <if test="order.addTime != null">
+	        add_time = #{order.addTime,jdbcType=TIMESTAMP},
+	      </if>
+	      <if test="order.updateTime != null">
+	        update_time = #{order.updateTime,jdbcType=TIMESTAMP},
+	      </if>
+	      <if test="order.deleted != null">
+	        deleted = #{order.deleted,jdbcType=BIT},
+	      </if>
+	      <if test="order.cancelTime != null">
+	        cancel_time = #{order.cancelTime,jdbcType=TIMESTAMP},
+	      </if>
+	      <if test="order.returnTime != null">
+	        return_time = #{order.returnTime,jdbcType=TIMESTAMP},
+	      </if>
+	      <if test="order.returnGoodsTime != null">
+	        return_goods_time = #{order.returnGoodsTime,jdbcType=TIMESTAMP},
+	      </if>
+	      <if test="order.returnPayTime != null">
+	        return_pay_time = #{order.returnPayTime,jdbcType=TIMESTAMP},
+	      </if>
+	      <if test="order.payMethod != null">
+	        pay_method = #{order.payMethod,jdbcType=INTEGER},
+	      </if>
+			<if test="order.returnReason != null">
+				return_reason = #{order.returnReason,jdbcType=VARCHAR},
+			</if>
+			<if test="order.returnOp != null">
+				return_op = #{order.returnOp,jdbcType=VARCHAR},
+			</if>
+			<if test="order.returnType != null">
+				return_type = #{order.returnType,jdbcType=VARCHAR},
+			</if>
+			<if test="order.crmName != null">
+				crm_name = #{order.crmName,jdbcType=VARCHAR},
+			</if>
+   	 </set>
+
+
+        where id = #{order.id,jdbcType=INTEGER} and update_time = #{lastUpdateTime,jdbcType=INTEGER}
+    </update>
+</mapper>

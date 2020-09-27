@@ -1,0 +1,1 @@
+<view><block wx:for="{{noticeList}}" wx:for-item="item" wx:for-index="index" wx:key="index"><view class="notice-item"><text class="time">{{item.addTime}}</text><view class="content"><text class="title">{{item.title}}</text><view class="detail-desc contentFont"><rich-text nodes="{{item.content}}"></rich-text></view></view></view></block></view>

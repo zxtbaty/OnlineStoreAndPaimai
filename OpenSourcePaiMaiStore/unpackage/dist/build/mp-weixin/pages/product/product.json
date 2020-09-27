@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "详情展示",
+  "usingComponents": {
+    "share": "/components/share",
+    "uni-countdown": "/components/uni-countdown/uni-countdown"
+  }
+}

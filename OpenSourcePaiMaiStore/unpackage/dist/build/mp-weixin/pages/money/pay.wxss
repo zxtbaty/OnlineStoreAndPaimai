@@ -1,0 +1,142 @@
+@charset "UTF-8";
+/* 页面左右间距 */
+/* 文字尺寸 */
+/*文字颜色*/
+/* 边框颜色 */
+/* 图片加载中颜色 */
+/* 行为相关颜色 */
+page {
+  background: #f8f8f8;
+}
+.app {
+  width: 100%;
+}
+.price-box {
+  background-color: #fff;
+  height: 225rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.price-box .price {
+    font-size: 40rpx;
+    color: #FF0000;
+    font-weight: bold;
+    margin: 50rpx 0 0 0;
+}
+.price-box .price:before {
+      content: '\FFE5';
+      font-size: 31rpx;
+}
+.price-box .p1 {
+    font-size: 24rpx;
+    margin: 20rpx 0 0;
+}
+.price-box .p2 {
+    font-size: 24rpx;
+    margin: 10rpx 0 0;
+}
+.price-box .p2 .red {
+      color: #FF0000;
+}
+.pay-type-list {
+  margin-top: 27rpx;
+  background-color: #fff;
+  /*.icon{
+			width: 100upx;
+			font-size: 52upx;
+		}
+		.icon-erjiye-yucunkuan {
+			color: #fe8e2e;
+		}
+		.icon-weixinzhifu {
+			color: #36cb59;
+		}
+		.icon-alipay {
+			color: #01aaef;
+		}*/
+}
+.pay-type-list .type-item {
+    height: 94rpx;
+    padding: 0 21rpx 0 26rpx;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: 24rpx;
+    position: relative;
+}
+.pay-type-list .wei-img {
+    width: 47rpx;
+    height: 41rpx;
+    margin: 0 26rpx 0 0;
+}
+.pay-type-list .zhi-img {
+    width: 43rpx;
+    height: 43rpx;
+    margin: 0 29rpx 0 0;
+}
+.pay-type-list .tit {
+    font-size: 32rpx;
+    color: #303133;
+    margin-bottom: 4rpx;
+}
+.pay-type-list .con {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    font-size: 24rpx;
+    color: #909399;
+}
+.mix-btn {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 630rpx;
+  height: 80rpx;
+  margin: 80rpx auto 30rpx;
+  font-size: 32rpx;
+  color: #fff;
+  background-color: #fa436a;
+  border-radius: 10rpx;
+  -webkit-box-shadow: 1px 2px 5px rgba(219, 63, 96, 0.4);
+          box-shadow: 1px 2px 5px rgba(219, 63, 96, 0.4);
+}
+

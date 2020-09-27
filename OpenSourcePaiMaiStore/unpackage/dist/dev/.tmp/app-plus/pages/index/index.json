@@ -1,0 +1,31 @@
+{
+  "titleNView": {
+    "type": "transparent",
+    "searchInput": {
+      "backgroundColor": "rgba(251, 251, 251,.6)",
+      "borderRadius": "16px",
+      "placeholder": "搜索商品名称",
+      "disabled": false,
+      "placeholderColor": "#FBFBFB",
+      "align": "left"
+    },
+    "buttons": [
+      {
+        "fontSrc": "/static/yticon.ttf",
+        "text": "",
+        "fontSize": "26",
+        "color": "red",
+        "float": "left",
+        "background": "rgba(0,0,0,0)"
+      },
+      {
+        "fontSrc": "/static/yticon.ttf",
+        "text": "",
+        "fontSize": "27",
+        "color": "#303133",
+        "background": "rgba(0,0,0,0)"
+      }
+    ]
+  },
+  "usingComponents": {}
+}

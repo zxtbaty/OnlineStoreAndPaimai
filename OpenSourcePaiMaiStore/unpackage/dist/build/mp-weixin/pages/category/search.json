@@ -1,0 +1,7 @@
+{
+  "enablePullDownRefresh": true,
+  "navigationBarTitleText": "商品搜索",
+  "usingComponents": {
+    "min-badge": "/components/min-badge/min-badge"
+  }
+}

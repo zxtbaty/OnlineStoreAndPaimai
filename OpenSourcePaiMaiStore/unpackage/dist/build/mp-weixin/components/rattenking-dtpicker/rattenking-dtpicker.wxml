@@ -1,0 +1,1 @@
+<picker class="rui-picker rui-class" mode="multiSelector" range="{{times}}" value="{{timesIndex}}" disabled="{{curDisabled}}" data-event-opts="{{[['change',[['changeDate',['$event']]]],['cancel',[['cancelDate',['$event']]]],['columnchange',[['columnchangeDate',['$event']]]]]}}" bindchange="__e" bindcancel="__e" bindcolumnchange="__e">{{''+curValue+''}}</picker>

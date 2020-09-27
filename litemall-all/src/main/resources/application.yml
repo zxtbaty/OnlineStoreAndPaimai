@@ -1,0 +1,27 @@
+spring:
+  profiles:
+    active: db, core, admin, wx, out
+  messages:
+    encoding: UTF-8
+  servlet:
+    multipart:
+      max-file-size: 10000MB
+      max-request-size: 10000MB
+
+server:
+  port: 8000
+  tomcat:
+    basedir: /data/app/upload
+  startJob: true
+  logFilePath: /opt/nohup.out
+  logFileRows: 2000
+logging:
+  level:
+    root:  ERROR
+    org.springframework:  ERROR
+    org.mybatis:  ERROR
+    org.jinyuanjava.litemall.core:  ERROR
+    org.jinyuanjava.litemall.db:  ERROR
+    org.jinyuanjava.litemall.admin:  ERROR
+    org.jinyuanjava.litemall.wx:  ERROR
+    org.jinyuanjava.litemall:  ERROR

@@ -1,0 +1,102 @@
+@charset "UTF-8";
+/* 页面左右间距 */
+/* 文字尺寸 */
+/*文字颜色*/
+/* 边框颜色 */
+/* 图片加载中颜色 */
+/* 行为相关颜色 */
+page {
+  background: #f7f7f7;
+}
+.c-tab {
+  height: 76rpx;
+  background: #fff;
+  padding: 20rpx 27rpx 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  font-size: 29rpx;
+}
+.c-tab .active {
+    border-bottom: 3rpx solid #E50A79;
+}
+.c-list {
+  padding: 0 27rpx;
+}
+.c-list .c-li {
+    width: 100%;
+    height: 253rpx;
+    margin: 29rpx 0 0;
+}
+.c-list .bg1 {
+    background: url("/static/newimg/quan_y.png");
+    background-size: 100% 100%;
+}
+.c-list .bg2 {
+    background: url("/static/newimg/quan_n.png");
+    background-size: 100% 100%;
+}
+.c-list .c-li-top {
+    color: #fff;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    height: 142rpx;
+    padding: 0 30rpx 0 26rpx;
+}
+.c-list .c-li-top .name {
+      font-size: 40rpx;
+      margin: 20rpx 0 0;
+}
+.c-list .c-li-top .quota {
+      font-size: 28rpx;
+      line-height: 50rpx;
+}
+.c-list .c-li-top .c-li-right {
+      font-size: 93rpx;
+      font-weight: bold;
+      padding: 10rpx 0 0;
+}
+.c-list .c-li-top .c-li-right:before {
+        content: '\FFE5';
+        font-size: 28rpx;
+}
+.c-list .c-li-bottom {
+    width: 100%;
+    font-size: 28rpx;
+    color: #666666;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    height: 111rpx;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 0 30rpx 0 26rpx;
+}
+.c-list .c-li-bottom .touse {
+      color: #EA4242;
+      font-size: 22rpx;
+      padding: 4rpx 16rpx;
+      border: 1px solid #EA4242;
+      border-radius: 8rpx;
+}
+uni-swiper {
+  height: 500vh;
+}
+

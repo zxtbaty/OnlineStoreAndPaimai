@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "提交预定",
+  "usingComponents": {
+    "uni-number-box": "/components/uni-number-box",
+    "rui-date-picker": "/components/rattenking-dtpicker/rattenking-dtpicker"
+  }
+}

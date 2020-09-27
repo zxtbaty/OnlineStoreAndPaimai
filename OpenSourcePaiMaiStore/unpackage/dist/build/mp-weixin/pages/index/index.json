@@ -1,0 +1,9 @@
+{
+  "bounce": "none",
+  "navigationBarTitleText": "航诚商业",
+  "navigationBarBackgroundColor": "#55036B",
+  "usingComponents": {
+    "min-badge": "/components/min-badge/min-badge",
+    "uni-countdown": "/components/uni-countdown/uni-countdown"
+  }
+}

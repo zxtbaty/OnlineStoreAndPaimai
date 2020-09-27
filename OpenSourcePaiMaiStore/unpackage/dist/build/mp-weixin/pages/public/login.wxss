@@ -1,0 +1,199 @@
+@charset "UTF-8";
+/* 页面左右间距 */
+/* 文字尺寸 */
+/*文字颜色*/
+/* 边框颜色 */
+/* 图片加载中颜色 */
+/* 行为相关颜色 */
+page {
+  background: #fff;
+}
+.container {
+  padding-top: 40rpx;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: url(../../static/img/login.2d8e95cf.png) no-repeat;
+  background-size: 103% auto;
+}
+.wrapper {
+  position: relative;
+  z-index: 90;
+  /* background: #fff; */
+  padding-bottom: 40rpx;
+}
+.login_top {
+  position: relative;
+  color: #fff;
+  font-size: 40rpx;
+  padding: 69rpx 0 0 27rpx;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.login_top .airplane_img {
+    position: absolute;
+    top: 0;
+    right: 61rpx;
+    width: 417rpx;
+    height: 120rpx;
+}
+.login_top .Welcome {
+    margin: 23rpx 0 0;
+    font-weight: 100;
+}
+.back-btn {
+  position: absolute;
+  left: 40rpx;
+  z-index: 9999;
+  padding-top: 25px;
+  top: 40rpx;
+  font-size: 40rpx;
+  color: #303133;
+}
+.left-top-sign {
+  font-size: 120rpx;
+  color: #f8f8f8;
+  position: relative;
+  left: -16rpx;
+}
+.right-top-sign {
+  position: absolute;
+  top: 80rpx;
+  right: -30rpx;
+  z-index: 95;
+}
+.right-top-sign:before {
+    -webkit-transform: rotate(50deg);
+        -ms-transform: rotate(50deg);
+            transform: rotate(50deg);
+    border-radius: 0 50px 0 0;
+}
+.right-top-sign:after {
+    position: absolute;
+    right: -198rpx;
+    top: 0;
+    -webkit-transform: rotate(-50deg);
+        -ms-transform: rotate(-50deg);
+            transform: rotate(-50deg);
+    border-radius: 50px 0 0 0;
+    /* background: pink; */
+}
+.welcome {
+  position: relative;
+  left: 50rpx;
+  top: -90rpx;
+  font-size: 46rpx;
+  color: #555;
+  text-shadow: 1px 0px 1px rgba(0, 0, 0, 0.3);
+}
+.input-content {
+  margin: 199rpx auto 0;
+  background: white;
+  -webkit-box-shadow: 0px 0px 21rpx 0px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 0px 21rpx 0px rgba(0, 0, 0, 0.1);
+  border-radius: 5rpx;
+  padding: 60rpx 92rpx;
+  width: 92.8%;
+}
+.input-item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  /* flex-direction: column; */
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  /* padding: 0 30upx; */
+  /* background: $page-color-light; */
+  height: 64rpx;
+  /* border-radius: 4px; */
+  margin-bottom: 24rpx;
+  border-bottom: 1px solid #b4b4b4;
+}
+.input-item:last-child {
+    margin-bottom: 0;
+}
+.input-item .tit {
+    height: 50rpx;
+    line-height: 56rpx;
+    /* font-size: $font-sm+2upx; */
+    font-size: 44rpx;
+    /* margin:0 10upx 0 0; */
+    /* color: $font-color-base; */
+}
+.input-item input {
+    height: 60rpx;
+    font-size: 30rpx;
+    color: #303133;
+    /* width: 100%; */
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+}
+.input-item .arrow_img {
+    width: 25rpx;
+    height: 25rpx;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAARCAYAAAA/mJfHAAAAiUlEQVQ4T6XUUQ2AMAxF0TsHSMABOEAK4AAcgRJwghVSAl9s3drtuztp8poXKHs9MAKrNh7KLE5gADZgTv0pxRp4wE4DSzFZJgtasCxoxVTQgyVBLxYFazABW+B6T2WuwSTdA5CD3oHJi/0g2c6DRSEPloSsmApZsCxkwb7WeFKrbQ2JX5BFq6wbLxwfcnnONpQAAAAASUVORK5CYII=);
+    background-size: 100% 100%;
+    margin: 0 10rpx 0 0;
+}
+.confirm-btn {
+  width: 100%;
+  height: 73rpx;
+  line-height: 73rpx;
+  border-radius: 50px;
+  margin-top: 53rpx;
+  background: -webkit-gradient(linear, left top, right top, from(#f3780e), to(#fdb64a));
+  background: -o-linear-gradient(left, #f3780e, #fdb64a);
+  background: linear-gradient(to right, #f3780e, #fdb64a);
+  color: #fff;
+  font-size: 27rpx;
+}
+.confirm-btn:after {
+    border-radius: 100px;
+}
+.forget-section {
+  font-size: 26rpx;
+  color: #4399fc;
+  text-align: center;
+  margin-top: 40rpx;
+}
+.register-section {
+  /* position: absolute; */
+  /* left: 0; */
+  /* bottom: 50upx; */
+  width: 100%;
+  font-size: 26rpx;
+  color: #606266;
+  /* text-align: center; */
+  overflow: hidden;
+  margin: 30rpx 0 0;
+}
+.register-section .forget-section {
+    float: left;
+    margin: 0;
+}
+.register-section text {
+    color: #4399fc;
+    margin-left: 10rpx;
+    float: right;
+}
+.login_rule {
+  position: absolute;
+  padding: 0 27rpx 65rpx;
+  bottom: 0;
+  color: #b4b4b4;
+  font-size: 17rpx;
+}
+.login_rule .blue {
+    color: #3acebf;
+}
+
